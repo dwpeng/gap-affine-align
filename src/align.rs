@@ -156,6 +156,12 @@ impl GapAffineAlignment {
             self.result.insertion += 1;
         }
 
+        while i > 0{
+            self.result.alignment.push((i - 1, 0, GapAffineAlignmentDirection::FO));
+            i -= 1;
+            self.result.deletion += 1;
+        }
+
         self.result.alignment.reverse();
     }
 
